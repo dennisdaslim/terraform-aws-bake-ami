@@ -160,7 +160,7 @@ PATTERN
 
 resource "aws_cloudwatch_event_target" "this" {
   count = "${var.codepipeline_s3_upload_cloudwatch_trigger == "true" ? 1 : 0}"
-  rule = "${aws_cloudwatch_event_rule.this.name}"
+  rule = "${aws_cloudwatch_event_rule.this[0].name}"
   arn  = "${aws_codepipeline.bake_ami.arn}"
 
   role_arn = "${var.events_role_arn}"
