@@ -143,3 +143,8 @@ variable "target_accounts" {
   description = "The list of AWS accounts to which AMIs will be shared"
   default     = []
 }
+
+variable "codepipeline_s3_upload_cloudwatch_trigger" {
+  description = "Create a s3 upload pipeline cloudwatch trigger or not"
+  default     = "true"
+}
